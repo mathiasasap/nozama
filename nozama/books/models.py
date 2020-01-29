@@ -1,3 +1,7 @@
 from django.db import models
+from nozama.authors.models import Author
 
-# Create your models here.
+
+class Book(models.Model):
+    name = models.CharField()
+    author = models.ForeignKey(Author, on_delete=models.CASCADE())

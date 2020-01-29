@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def books(request):
+    context = {}
+    return render(request, "books/books.html", context=context)
