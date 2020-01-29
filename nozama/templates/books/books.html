@@ -4,4 +4,27 @@
 
 <h1>Books</h1>
 
+{% if books_list %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books_list %}
+    <tr>
+      <th scope="row">{{ book.id }}</th>
+      <td>{{ book.name }}</td>
+      <td>{{ book.author }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No books created</p>
+{% endif %}
+
 {% endblock %}
